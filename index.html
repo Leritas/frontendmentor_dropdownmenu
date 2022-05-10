@@ -1,39 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="main.css">
   <title>Frontend Mentor | Intro section with dropdown navigation</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
   </style>
 </head>
+
 <body>
+  <header>
+    <img src="images/logo.svg" alt="SNAP" class="logo">
+    <nav class="desktop">
+      <ul>
+        <li class="dropdown">
+          <a href="/features">Features</a>
+          <img src="images/icon-arrow-down.svg" alt="" class="arrow-down">
+          <img src="images/icon-arrow-up.svg" alt="" class="arrow-up">
+          <div class="dropdown-menu pos-right">
+            <a href="" class="dropdown-item"><img src="images/icon-todo.svg" alt="">Todo List</a>
+            <a href="" class="dropdown-item"><img src="images/icon-calendar.svg" alt="">Calendar</a>
+            <a href="" class="dropdown-item"><img src="images/icon-reminders.svg" alt="">Reminders</a>
+            <a href="" class="dropdown-item"><img src="images/icon-planning.svg" alt="">Planning</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="/company">Company</a>
+          <img src="images/icon-arrow-down.svg" alt="" class="arrow-down">
+          <img src="images/icon-arrow-up.svg" alt="" class="arrow-up">
+          <div class="dropdown-menu pos-left">
+            <a href="" class="dropdown-item">History</a>
+            <a href="" class="dropdown-item">Our Team</a>
+            <a href="" class="dropdown-item">Blog</a>
+          </div>
+        </li>
+        <li><a href="/careers">Careers</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </nav>
+    <div class="auth desktop">
+      <button class="login">Login</button>
+      <button class="register">Register</button>
+    </div>
+    <img src="images/icon-menu.svg" alt="" class="mobile menu" onclick="openMenu()">
+    <div class="dark-background"></div>
+    <nav class="mobile">
+      <img src="images/icon-close-menu.svg" alt="" class="mobile closemenu" onclick="closeMenu()">
+      <ul>
+        <li class="dropdown">
+          <a href="/features">Features</a>
+          <img src="images/icon-arrow-down.svg" alt="" class="arrow-down">
+          <img src="images/icon-arrow-up.svg" alt="" class="arrow-up">
+          <div class="dropdown-menu pos-right">
+            <a href="" class="dropdown-item"><img src="images/icon-todo.svg" alt="">Todo List</a>
+            <a href="" class="dropdown-item"><img src="images/icon-calendar.svg" alt="">Calendar</a>
+            <a href="" class="dropdown-item"><img src="images/icon-reminders.svg" alt="">Reminders</a>
+            <a href="" class="dropdown-item"><img src="images/icon-planning.svg" alt="">Planning</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="/company">Company</a>
+          <img src="images/icon-arrow-down.svg" alt="" class="arrow-down">
+          <img src="images/icon-arrow-up.svg" alt="" class="arrow-up">
+          <div class="dropdown-menu pos-left">
+            <a href="" class="dropdown-item">History</a>
+            <a href="" class="dropdown-item">Our Team</a>
+            <a href="" class="dropdown-item">Blog</a>
+          </div>
+        </li>
+        <li><a href="/careers">Careers</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+      <div class="auth mobile">
+        <button class="login">Login</button>
+        <button class="register">Register</button>
+      </div>
+    </nav>
+  </header>
 
-  Features
-  Company
-  Careers
-  About
+  <div class="main">
+    <div class="jumbotron">
+      <h1>Make remote work</h1>
+      <p>
+        Get your team in sync, no matter your location. Streamline processes,
+        create team rituals, and watch productivity soar.
+      </p>
+      <button class="more">Learn more
+      </button>
+      <div class="clients"></div>
+    </div>
+    <img src="images/image-hero-desktop.png" alt="" class="img-hero desktop">
+    <img src="images/image-hero-mobile.png" alt="" class="img-hero mobile">
+  </div>
 
-  Login
-  Register
-
-  Make remote work
-
-  Get your team in sync, no matter your location. Streamline processes, 
-  create team rituals, and watch productivity soar.
-
-  Learn more
-  
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
   </div>
+  <img src="design/mobile-design.jpg" alt="" class="example">
+  <script src="script.js"></script>
 </body>
+
 </html>
