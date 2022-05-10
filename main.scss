@@ -169,7 +169,7 @@ header {
         position: fixed;
         top: 0;
         bottom: 0;
-        right: -100%;
+        right: -50%;
         z-index: 100;
         max-width: 25em;
         background: $white;
@@ -334,7 +334,7 @@ a:hover {
 }
 
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 900px) {
     .desktop {
         display: none;
     }
