@@ -60,16 +60,18 @@
       <button class="login">Login</button>
       <button class="register">Register</button>
     </div>
-    <img src="images/icon-menu.svg" alt="" class="mobile menu" onclick="openMenu()">
+    <img src="images/icon-menu.svg" alt="" class="mobile menu" onclick="menu()">
     <div class="dark-background"></div>
     <nav class="mobile">
-      <img src="images/icon-close-menu.svg" alt="" class="mobile closemenu" onclick="closeMenu()">
+      <img src="images/icon-close-menu.svg" alt="" class="mobile closemenu" onclick="menu()">
       <ul>
         <li class="dropdown">
-          <a href="/features">Features</a>
-          <img src="images/icon-arrow-down.svg" alt="" class="arrow-down">
-          <img src="images/icon-arrow-up.svg" alt="" class="arrow-up">
-          <div class="dropdown-menu pos-right">
+          <div class="dropdown-caption">Features
+            <img src="images/icon-arrow-down.svg" alt="" class="arrow-down">
+            <img src="images/icon-arrow-up.svg" alt="" class="arrow-up">
+          </div>
+
+          <div class="dropdown-menu">
             <a href="" class="dropdown-item"><img src="images/icon-todo.svg" alt="">Todo List</a>
             <a href="" class="dropdown-item"><img src="images/icon-calendar.svg" alt="">Calendar</a>
             <a href="" class="dropdown-item"><img src="images/icon-reminders.svg" alt="">Reminders</a>
@@ -77,10 +79,11 @@
           </div>
         </li>
         <li class="dropdown">
-          <a href="/company">Company</a>
-          <img src="images/icon-arrow-down.svg" alt="" class="arrow-down">
-          <img src="images/icon-arrow-up.svg" alt="" class="arrow-up">
-          <div class="dropdown-menu pos-left">
+          <div class="dropdown-caption">Company
+            <img src="images/icon-arrow-down.svg" alt="" class="arrow-down">
+            <img src="images/icon-arrow-up.svg" alt="" class="arrow-up">
+          </div>
+          <div class="dropdown-menu">
             <a href="" class="dropdown-item">History</a>
             <a href="" class="dropdown-item">Our Team</a>
             <a href="" class="dropdown-item">Blog</a>
@@ -97,7 +100,9 @@
   </header>
 
   <div class="main">
+    <img src="images/image-hero-mobile.png" alt="" class="hero-mobile">
     <div class="jumbotron">
+      
       <h1>Make remote work</h1>
       <p>
         Get your team in sync, no matter your location. Streamline processes,
@@ -105,17 +110,21 @@
       </p>
       <button class="more">Learn more
       </button>
-      <div class="clients"></div>
+      <div class="clients">
+        <img src="images/client-databiz.svg" alt="">
+        <img src="images/client-audiophile.svg" alt="">
+        <img src="images/client-meet.svg" alt="">
+        <img src="images/client-maker.svg" alt="">
+      </div>
     </div>
-    <img src="images/image-hero-desktop.png" alt="" class="img-hero desktop">
-    <img src="images/image-hero-mobile.png" alt="" class="img-hero mobile">
+    <img src="images/image-hero-desktop.png" alt="" class="hero-desktop">
+    
   </div>
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Leritas</a>.
   </div>
-  <img src="design/mobile-design.jpg" alt="" class="example">
   <script src="script.js"></script>
 </body>
 

@@ -23,33 +23,55 @@ header {
     height: 5em;
 
     .logo {
-        margin: 0 2.5em;
+        margin: 0 3%;
         margin-top: 0.7em;
     }
 
     nav {
         ul {
             list-style: none;
-            display: flex;
-            justify-content: space-between;
 
             li {
                 margin: 0 1.5em;
-                height: 5em;
-                line-height: 5em;
+            }
+        }
+
+        .dropdown {
+            .arrow-down {
+                vertical-align: middle;
+                display: inline-block;
+            }
+
+            .arrow-up {
+                vertical-align: middle;
+                display: none;
+            }
+
+            .dropdown-menu {
+                .dropdown-item {
+                    display: block;
+                    margin: 1em 1.5em;
+                }
+
+                img {
+                    margin-right: 1em;
+                    width: 1em;
+                    height: 1em;
+                }
             }
         }
     }
 
     .auth {
         margin-left: auto;
-        margin-right: 2.4em;
+        margin-right: 3em;
 
         button {
             all: unset;
             line-height: 1.5em;
             padding: 0.5em 1.3em;
             color: $grey;
+            cursor: pointer;
 
             &:hover {
                 color: $black;
@@ -57,7 +79,7 @@ header {
         }
 
         .login {
-            margin-right: 0.7em;
+            margin-right: 1em;
         }
 
         .register {
@@ -70,92 +92,203 @@ header {
         }
     }
 
+    nav.desktop {
+        ul {
+            display: flex;
+
+            li {
+                height: 5em;
+                line-height: 5em;
+            }
+        }
+
+        .dropdown {
+            position: relative;
+
+            .dropdown-menu {
+                opacity: 0;
+                user-select: none;
+                position: absolute;
+                top: 5em;
+                z-index: 100;
+                width: max-content;
+                background: white;
+                box-shadow: 0 0 5em rgba(0, 0, 0, 0.2);
+                border-radius: 0.5em;
+                transition: opacity 300ms ease-in-out;
+                line-height: normal;
+            }
+
+            &:hover {
+                .dropdown-menu {
+                    opacity: 1;
+                    user-select: all;
+                }
+
+                .arrow-down {
+                    display: none;
+                }
+
+                .arrow-up {
+                    display: inline-block;
+                }
+            }
+
+            .pos-right {
+                right: 0;
+            }
+
+            .pos-left {
+                left: 0;
+            }
+        }
+    }
+
     img.mobile {
         cursor: pointer;
         user-select: none;
-        margin-right: 1em;
+        margin-right: 1.5em;
         margin-left: auto;
+    }
+
+    .dark-background {
+        display: none;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.6);
+
+        &.active {
+            display: block;
+        }
     }
 
     nav.mobile {
         position: fixed;
         top: 0;
         bottom: 0;
+        right: -100%;
+        z-index: 100;
+        max-width: 25em;
+        background: $white;
+        transition: right 200ms ease-in-out;
 
-        ul {
-            list-style: none;
+        &.active {
+            right: 0;
+        }
+
+        img.closemenu {
             display: block;
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
 
-            li {
-                margin: 0 1.5em;
-                height: 5em;
-                line-height: 5em;
+        li {
+            margin-bottom: 1em;
+        }
+
+        .dropdown {
+            .dropdown-menu {
+                overflow: hidden;
+                max-height: 0em;
+                transition: max-height 300ms ease-in-out;
+            }
+
+            &.dd-show {
+                .dropdown-menu {
+                    max-height: 15em;
+                }
+
+                .arrow-down {
+                    display: none;
+                }
+
+                .arrow-up {
+                    display: inline-block;
+                }
+            }
+        }
+
+        .auth {
+            width: 9em;
+            margin: 1em;
+
+            button {
+                display: block;
+                text-align: center;
+                width: 100%;
             }
         }
     }
 }
 
-.dropdown {
-    position: relative;
+.main {
+    margin-top: 1em;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
 
-    .arrow-down {
-        vertical-align: middle;
+    .hero-mobile {
+        width: 100vw;
     }
 
-    .arrow-up {
-        vertical-align: middle;
-        display: none;
-    }
+    .jumbotron {
+        position: relative;
+        width: 34vw;
 
-    .dropdown-menu {
-        opacity: 0;
-        user-select: none;
-        position: absolute;
-        top: 5em;
-        width: max-content;
-        background: white;
-        box-shadow: 0 0 5em rgba(0, 0, 0, 0.2);
-        border-radius: 0.5em;
-        transition: opacity 300ms ease-in-out;
-        line-height: normal;
+        h1 {
+            font-size: 80px;
+            margin-top: 15%;
+            color: $black;
+        }
 
-        .dropdown-item {
+        p {
+            font-size: 18px;
+            width: 80%;
+            line-height: 1.5em;
+            margin-top: 10%;
+        }
+
+        button.more {
             display: block;
-            margin: 1em 1.5em;
+            background: $black;
+            border: 1px solid $black;
+            border-radius: 1em;
+            font-weight: bold;
+            font-size: 17px;
+            color: $white;
+            padding: 1em 2em;
+            margin-top: 7.5%;
+            cursor: pointer;
+
+            &:hover {
+                color: $black;
+                background: $white;
+            }
         }
 
-        img {
-            margin-right: 1em;
-            width: 1em;
-            height: 1em;
+        .clients {
+            position: absolute;
+            bottom: 0;
+            display: flex;
+            width: 85%;
+            justify-content: space-between;
+            align-items: center;
         }
-
     }
 
-    &:hover {
-        .dropdown-menu {
-            opacity: 1;
-            user-select: all;
-        }
-
-        .arrow-down {
-            display: none;
-        }
-
-        .arrow-up {
-            display: inline-block;
-        }
-    }
-
-    .pos-right {
-        right: 0;
-    }
-
-    .pos-left {
-        left: 0;
+    .hero-desktop {
+        height: 75vh;
     }
 }
 
+.attribution {
+    display: block;
+    text-align: center;
+}
 
 a:hover {
     color: $black;
@@ -169,21 +302,35 @@ a:hover {
     display: none;
 }
 
-.attibution {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+.hero-desktop {
+    display: inline;
 }
 
-.example {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    height: 100vh;
-    width: 100vw;
-    opacity: 0;
+.hero-mobile {
+    display: none;
+}
+
+
+
+
+@media screen and (max-width: 1400px) {
+    .main {
+        margin-top: 1em;
+
+        .jumbotron {
+            h1 {
+                margin-top: 5%;
+            }
+
+            p {
+                margin-top: 1%;
+            }
+
+            .more {
+                margin-top: 1%;
+            }
+        }
+    }
 }
 
 
@@ -193,6 +340,67 @@ a:hover {
     }
 
     .mobile {
+        display: inline-block;
+    }
+
+    .main {
+        margin-top: 1em;
+
+        .jumbotron {
+            h1 {
+                margin-top: 0;
+                font-size: 60px;
+            }
+
+            p {
+                margin-top: 0;
+            }
+
+            .more {
+                margin-top: 0;
+            }
+        }
+
+        .hero-desktop {
+            height: 60vh;
+        }
+    }
+
+}
+
+@media screen and (max-width: 650px) {
+    .main {
+        flex-direction: column;
+        align-items: center;
+
+        .jumbotron {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            min-height: 45vh;
+            h1 {
+                font-size: 35px;
+                margin-top: 5%;
+            }
+
+            p {
+                text-align: center;
+                margin-top: 5%;
+                font-size: 16px;
+            }
+
+            .more {
+                margin-top: 5%;
+            }
+        }
+    }
+
+    .hero-desktop {
+        display: none;
+    }
+
+    .hero-mobile {
         display: inline-block;
     }
 }
