@@ -169,14 +169,15 @@ header {
         position: fixed;
         top: 0;
         bottom: 0;
-        right: -50%;
+        right: 0;
         z-index: 100;
+        transform: translateX(100%);
         max-width: 25em;
         background: $white;
-        transition: right 200ms ease-in-out;
+        transition: transform 200ms ease-in-out;
 
         &.active {
-            right: 0;
+            transform: translateX(0%);
         }
 
         img.closemenu {
