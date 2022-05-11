@@ -180,7 +180,7 @@ header {
             transform: translateX(0%);
         }
 
-        img.closemenu {
+        img.close {
             display: block;
             margin-top: 2em;
             margin-bottom: 2em;
@@ -193,7 +193,7 @@ header {
         .dropdown {
             .dropdown-menu {
                 overflow: hidden;
-                max-height: 0em;
+                max-height: 0;
                 transition: max-height 300ms ease-in-out;
             }
 

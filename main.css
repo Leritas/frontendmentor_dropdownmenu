@@ -191,7 +191,7 @@ header nav.mobile.active {
           transform: translateX(0%);
 }
 
-header nav.mobile img.closemenu {
+header nav.mobile img.close {
   display: block;
   margin-top: 2em;
   margin-bottom: 2em;
@@ -203,7 +203,7 @@ header nav.mobile li {
 
 header nav.mobile .dropdown .dropdown-menu {
   overflow: hidden;
-  max-height: 0em;
+  max-height: 0;
   -webkit-transition: max-height 300ms ease-in-out;
   transition: max-height 300ms ease-in-out;
 }
